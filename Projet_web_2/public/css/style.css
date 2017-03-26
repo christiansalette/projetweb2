@@ -14,6 +14,7 @@ and open the template in the editor.
 }
 body {
     width: 100%;
+    max-height:100%;
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Nixie One';
@@ -27,7 +28,7 @@ body {
     position:absolute;
     width:100%;
     height:100%;
-    z-index:1;
+    z-index:2;
     background:rgba(30, 30, 30, 0.8);
 }
 #lightBox button{
@@ -65,27 +66,82 @@ body {
     display:none;
 }
 /*==========================================================================================================================*/
+/*============================================== FORMULAIRE PARTIE ========================================================*/
+/*==========================================================================================================================*/
+#partie{
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:2;
+    background:rgba(30, 30, 30, 0.8);
+}
+#containerPartie{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#formPartie{
+    width:45%;
+    height:auto;
+    margin:0 auto;
+    background:#56C1AA;
+    color:white;
+    padding:5%;
+    font-size:2em;
+    border-radius:35px;
+}
+#formPartie label{
+    display:block;
+}
+#formPartie input{
+    width:99%;
+    padding:3px;
+    font-size:1em;
+    margin-bottom:20px;
+    font-family: 'Nixie One';
+    outline:none;
+}
+#formPartie select, #formPartie button{
+    background:white;
+    text-transform: uppercase;
+    font-weight:bold;
+    width:40%;
+    height:2em;
+    text-align:center;
+    font-family: 'Nixie One';
+    color:#56C1AA;
+    border-radius:10px;
+    padding:3px;
+    font-size:1em;
+    outline:none;
+}
+#formPartie button{
+    float:right;
+    margin-top:20px;
+    border:0;
+}
+#formPartie button:hover{
+    border:1px inset #cacaca;
+    color:#cacaca;
+}
+/*==========================================================================================================================*/
 /*============================================== LISTE COMPOSITIONS ========================================================*/
 /*==========================================================================================================================*/
 #compositionsListe {
     position:fixed;
     background:white;
     width: 100%;
-    max-height:auto;
-    display: flex;
+    height:auto;
     border-bottom:1px solid #cacaca;
-}
-#prev, #next{
-    position:absolute;
-    padding:5px;
-    height:100%;
     z-index:1;
 }
-#next{
+#down{
     position:absolute;
-    top:0;
-    left:86.8%;
-    height:100%;
+    left:50%;
+    top:95px;
 }
 .composition{
     max-width:60px;
@@ -95,6 +151,7 @@ body {
     border-radius: 15%;
     margin: 1%;
     overflow:hidden;
+    float:left;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,13 +162,38 @@ body {
 }
 .ui-draggable-dragging{
     transition:transform 0.4s;
-    transform:scale(0.3);
+    transform:scale(0.7);
 }
 #carte {
-    width: 70%;
-    padding-top:150px;
-    margin:0 auto;
-    height: 652px;
+    position:absolute;
+    width:100%;
+    min-height: 100%;
+    z-index:0;   
+}
+#stations{
+    margin:10%;
+}
+.nomStation {
+    margin-left: 20px;
+    margin-top:15px;
+    float: left;
+    color:#FFF;
+    font-size:2em;
+}
+.target {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #FFF;
+    border: 1px solid grey;
+    float: left;
+}
+.rails {
+    width: 5px;
+    height: 20px;
+    background-color: #FFF;
+    clear: both;
+    margin-left:23px;
 }
 .target{
     overflow:hidden;
