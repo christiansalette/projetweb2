@@ -1,0 +1,1607 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 
+    Author     : 
+*/
+@import url(https://fonts.googleapis.com/css?family=Nixie+One|Open+Sans);
+*{
+    margin:0;
+    padding:0;
+}
+body {
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Nixie One';
+    text-transform: uppercase;
+    font-size: 0.6em;
+} 
+/*==========================================================================================================================*/
+/*==================================================== LIGHTBOX CSS ========================================================*/
+/*==========================================================================================================================*/
+#lightBox{
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:1;
+    background:rgba(30, 30, 30, 0.8);
+}
+#lightBox button{
+    position: absolute;
+    z-index: 3;
+    background:transparent;
+    border:none;
+    color:white;
+    font-size:2em;
+    padding-top:20px;
+    padding-left:20px;
+    padding-bottom:-20px;
+    cursor: pointer;
+    outline:none;
+}
+#containerLightBox{
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#imgLightBox{
+    width:45%;
+    height:auto;
+    margin:0 auto;
+}
+#imgLightBox img{
+    width:100%;
+    height:auto;
+}
+.hidden{
+    display:none;
+}
+/*==========================================================================================================================*/
+/*============================================== LISTE COMPOSITIONS ========================================================*/
+/*==========================================================================================================================*/
+#compositionsListe {
+    position:fixed;
+    background:white;
+    width: 100%;
+    max-height:auto;
+    display: flex;
+    border-bottom:1px solid #cacaca;
+}
+#prev, #next{
+    position:absolute;
+    padding:5px;
+    height:100%;
+    z-index:1;
+}
+#next{
+    position:absolute;
+    top:0;
+    left:86.8%;
+    height:100%;
+}
+.composition{
+    max-width:60px;
+    width: 5%;
+    height: auto;
+    border: 1px solid #F05A28;
+    border-radius: 15%;
+    margin: 1%;
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.composition img{
+    width:100%;
+    height:auto;
+}
+.ui-draggable-dragging{
+    transition:transform 0.4s;
+    transform:scale(0.3);
+}
+#carte {
+    width: 70%;
+    padding-top:150px;
+    margin:0 auto;
+    height: 652px;
+}
+.target{
+    overflow:hidden;
+}
+.nomOrange {
+    color: #F05A28;
+}
+.nomVert {
+    color: #009344;
+}
+.nomBleu {
+    color: #00ADEF;
+}
+.nomJaune {
+    color: #F29C1A;
+}
+#videGaucheLigne01 {
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 8px;
+    float: left;
+}
+
+#montmorency {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 8px;
+    float: left;
+    background-color: #F05A28; 
+}
+
+#nomMontmorency {
+    width: 615px;
+    height: 20px;
+    margin-top: 8px;
+    float: left;
+    padding-left: 5px;
+}
+
+#videGaucheLigne02 {
+    width: 100px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+}
+
+#delaconcorde {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28; 
+}
+
+#nomDelaconcorde {
+    width: 535px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#videGaucheLigne03 {
+    width: 180px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+}
+
+#cartier {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28; 
+}
+
+#nomCartier {
+    width: 175px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomHonorebeaugrand {
+    width: 235px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#honorebeaugrand {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#videDroitLigne03 {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#nomRadisson {
+    width: 595px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#radisson {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#videDroitLigne04 {
+    width: 40px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#nomHenribourassa {
+    width: 215px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#henribourassa {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#nomLangerlier {
+    width: 335px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#langelier {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#videDroitLigne05 {
+    width: 60px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#nomSauve {
+    width: 235px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#sauve {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#videCentreLigne06 {
+    width: 100px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#saintmichel {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #00ADEF;
+}
+
+#nomSaintmichel {
+    width: 95px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomCadillac {
+    width: 75px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#cadillac {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#videDroitLigne07 {
+    width: 80px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#nomCremazie {
+    width: 255px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#cremazie {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#videCentreLigne07 {
+    width: 60px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#diberville {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #00ADEF;
+}
+
+#nomDibervile {
+    width: 75px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomLassomption {
+    width: 95px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#lassomption {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#videDroitLigne08 {
+    width: 100px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#nomJarry {
+    width: 275px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#jarry {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#videCentreLigne08 {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#fabre {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #00ADEF;
+}
+
+#nomFabre {
+    width: 135px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomViau {
+    width: 55px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+    
+}
+
+#viau {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#videDroitLigne08 {
+    width: 80px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#nomJeantalon {
+    width: 295px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#jeantalon {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#videCentreLigne09 {
+    width: 200px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#piex {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#nomPiex {
+    width: 80px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomDecastelneau {
+    width: 275px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#decastelneau {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #00ADEF;
+}
+
+#videCentreLigne10 {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#beaubien {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#nomBeaubien {
+    width: 155px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#joliette {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#nomJoliette {
+    width: 140px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+
+#nomParc {
+    width: 255px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#parc {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #00ADEF;
+}
+
+#videCentreLigne11 {
+    width: 60px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#rosemont {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#nomRosemont {
+    width: 115px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#prefontaine {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#nomPrefontaine {
+    width: 160px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#videGaucheLigne12 {
+    width: 360px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+}
+
+#laurier {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#nomLaurier {
+    width: 75px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#frontenac {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#nomFrontenac {
+    width: 170px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomCotevertu {
+    width: 80px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#cotevertu {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#nomAcadie {
+    width: 150px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#acadie {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #00ADEF;
+}
+
+#nomMontroyal {
+    width: 95px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#montroyal {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#videCentreLigne13 {
+    width: 60px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#papineau {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#nomPapineau {
+    width: 160px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomDucollege {
+    width: 100px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#ducollege {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#nomSherbrooke {
+    width: 270px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#sherbrooke {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#videCentreLigne14 {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+/*#beaudry {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}*/
+
+#nomBeaudry {
+    width: 150px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomDelasavanne {
+    width: 120px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#delasavanne {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#nomOutremont {
+    width: 110px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#outremont {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #00ADEF;
+}
+
+#nomBerriuqam {
+    width: 135px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#berriuqam {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#videCentreLigne15 {
+    width: 60px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#parcjeandrapeau {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F29C1A;
+}
+
+#nomParcjeandrapeau {
+    width: 110px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomNamur {
+    width: 140px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#namur {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#videCentreLigne16 {
+    width: 60px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#edouardmontpetit {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #00ADEF;
+}
+
+#nomEdouardmontpetit {
+    width: 145px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#saintlaurent {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#nomSaintlaurent {
+    width: 220px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomPlamondon {
+    width: 160px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#plamondon {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#videCentreLigne17 {
+    width: 40px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#universitedemontreal {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #00ADEF;
+}
+
+#nomUniversitedemontreal {
+    width: 145px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#placedesarts {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#nomPlacedesarts {
+    width: 120px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#longueuil {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F29C1A;
+}
+
+#nomLongueuil {
+    width: 100px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomCotesaintecatherine {
+    width: 180px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#cotesaintecatherine {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#videCentreLigne18 {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#cotedesneiges {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #00ADEF;
+}
+
+#nomCotedesneiges {
+    width: 120px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#mcgill {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#nomMcgill {
+    width: 80px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#champdemars {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#nomChampdemars {
+    width: 130px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomSnowdon {
+    width: 200px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#snowdon {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #00ADEF;
+}
+
+#videCentreLigne19 {
+    width: 100px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#peel {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#nomPeel {
+    width: 100px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#placedarmes {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#nomPlacedarmes {
+    width: 140px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomVillamaria {
+    width: 220px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#villamaria {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#videCentreLigne20 {
+    width: 60px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#guyconcordia {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#nomGuyconcordia {
+    width: 100px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#squarevictoriaoaci {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#nomSuqarevictoriaoaci {
+    width: 160px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomVendome {
+    width: 240px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#vendome {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#videCentreLigne21 {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+/*#atwater {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}*/
+
+#nomAtwater {
+    width: 100px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#bonaventure {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#nomBonaventure {
+    width: 209px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomPlacesainthenri {
+    width: 260px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#placesainthenri {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#videCentreLigne22 {
+    width: 100px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#lucienlallier {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#nomLucienlallier {
+    width: 180px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#videGaucheLigne23 {
+    width: 360px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+}
+
+#georgesvanier {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#nomGeorgesvanier {
+    width: 260px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomLionelgroulx {
+    width: 300px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#lionelgroulx {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #F05A28;
+}
+
+#videDroiteLigne24 {
+    width: 340px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#videGaucheLigne25 {
+    width: 325px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+}
+
+#charlevoix {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#nomCharlevoix {
+    width: 250px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#videGaucheLigne26 {
+    width: 305px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+}
+
+#lasalle {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#nomLasalle {
+    width: 260px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomJolicoeur {
+    width: 240px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#jolicoeur {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#videCentreLigne27 {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#deleglise {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#nomDeleglise {
+    width: 260px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomMonk {
+    width: 220px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#monk {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#videCentreLigne28 {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
+
+#verdun {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#nomVerdun {
+    width: 180px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+}
+
+#nomAngrignon {
+    width: 200px;
+    height: 20px;
+    margin-left: 8px;
+    margin-top: 2px;
+    clear: both;
+    float: left;
+    padding-right: 5px;
+    text-align: right;
+}
+
+#angrignon {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-top: 2px;
+    float: left;
+    background-color: #009344;
+}
+
+#videDroiteLigne29 {
+    width: 440px;
+    height: 20px;
+    margin-top: 2px;
+    float: left;
+}
